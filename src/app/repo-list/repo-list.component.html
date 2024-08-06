@@ -1,0 +1,21 @@
+<div class="header">
+  <h2 class="repo-title">Trending Repositories</h2>
+</div>
+<div class="repo-list">
+  <div class="repo-item" *ngFor="let repo of repos">
+    <div class="repo-row">
+      <h3>{{ repo.name }}</h3>
+      <p>{{ repo.description }}</p>
+      <div class="repo-details">
+        <div class="repo-owner-details">
+          <img [src]="repo.owner.avatar_url" class="avatar">
+          <p>{{ repo.owner.login }}</p>
+        </div>
+        <div class="empty"></div>
+        <p class="star-count">⭐ {{ repo.stargazers_count }}</p>
+        <!-- For verification purpose -->
+        <!--<p>{{repo.created_at | date:'yyyy-MM-dd'}}</p>-->
+      </div>
+    </div>
+  </div>
+</div>
